@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Jayasuriya</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .bio {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 20px;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .links {
+            margin-top: 20px;
+        }
+
+        .links a {
+            margin-right: 15px;
+        }
+
+        /* Research Section */
+        .section-title {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #000;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .research-intro {
+            margin-bottom: 30px;
+        }
+
+        .highlighted {
+            background-color: #fff2a8;
+            padding: 0 3px;
+        }
+
+        /* Projects */
+        .project {
+            display: flex;
+            margin-bottom: 40px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .project-image {
+            width: 500px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .project-image img {
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        .project-info h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #000;
+        }
+
+        .project-authors {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .project-venue {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .project-links {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .project-links a {
+            margin-right: 10px;
+        }
+
+        .project-description {
+            margin-top: 10px;
+        }
+
+        /* Publications */
+        .publications {
+            margin-top: 50px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+            }
+
+            .bio {
+                padding-right: 0;
+                margin-top: 20px;
+            }
+
+            .project {
+                flex-direction: column;
+            }
+
+            .project-image {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 15px;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="bio">
+            <h1>Michael Jayasuriya</h1>
+            <p>I'm a medical student at Drexel College of Medicine in Philadelphia, Pennsylvania, interested in the
+                intersection between AI and medicine.</p>
+
+            <p>Before school, I was a software engineer at Google's self-driving car project, <a
+                    href="https://waymo.com/">Waymo</a>.</p>
+
+            <div class="links">
+                <a href="mailto:michael.jayasuriya@gmail.com">Email</a> /
+                <a href="https://drive.google.com/file/d/1A-VoPHJOARQw-QDVrkaaOo87Sukk62iw/view?usp=sharing">CV</a> /
+                <a href="https://www.linkedin.com/in/mjayasur/">LinkedIn</a> /
+                <a href="https://scholar.google.com/citations?user=PVpGqNsAAAAJ&hl=en">Google Scholar</a> /
+                <a href="https://github.com/mjayasur">Github</a>
+            </div>
+        </div>
+
+        <div class="profile-photo">
+            <img src="michael.jpeg" alt="Michael Jayasuriya">
+        </div>
+    </header>
+
+    <main>
+        <h2 class="section-title">Highlighted Research</h2>
+
+        <div class="research-intro">
+            <p>My research focuses on the application of artificial intelligence and machine learning in medicine,
+                particularly in medical imaging and computational biology. I'm interested in developing tools that can
+                assist clinicians in diagnosis, treatment planning, and understanding complex biological systems. Some
+                of my papers are <span class="highlighted">highlighted</span>.</p>
+        </div>
+
+        <div class="projects">
+            <!-- Project 1 -->
+            <div class="project">
+                <div class="project-image">
+                    <img src="hounsfield.png" alt="AI Osteoporosis Screening">
+                </div>
+
+                <div class="project-info">
+                    <h3><a href="#">Artificial Intelligence Image Analysis for Hounsfield Units in Preoperative
+                            Thoracolumbar CT Scans</a></h3>
+                    <div class="project-authors">Emily Feng, BS, Nishantha M. Jayasuriya, BA, Karim Rizwan Nathani,
+                        MBBS, MS, Konstantinos Katsos, MBBS, Laura A. Machlab, MS, Graham W. Johnson, MD, PhD, Brett A.
+                        Freedman, MD, and Mohamad Bydon, MD</div>
+                    <div class="project-venue">Journal of Neurosurgery: Spine, In Press</div>
+                    <div class="project-venue">Oral Presentation at AANS 2024</div>
+                    <div class="project-links">
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                    <p class="project-description">We developed an AI model for automatically detecting Hounsfield unit
+                        values at the L1 vertebra in preoperative thoracolumbar CT scans. This model serves as a
+                        screening tool for osteoporosis in patients undergoing spine surgery. Using the nnU-Net
+                        framework for segmentation, our model achieved a high Dice coefficient of 0.91 and strong
+                        agreement with human experts (Pearson correlation: 0.96).</p>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project">
+                <div class="project-image">
+                    <img src="semantic-retrieval.gif" alt="Semantic Retrieval">
+                </div>
+
+                <div class="project-info">
+                    <h3><a href="https://www.medrxiv.org/content/10.1101/2023.02.16.23286056v1">Semantic Retrieval of
+                            Similar Radiological Images using Vision Transformers</a></h3>
+                    <div class="project-authors">Anjali Thakrar*, Michael Jayasuriya*, Adrian Serapio, Xiao Wu (M.D.),
+                        Eric Davis (M.D.), Jamie Schroeder (M.D.), Maya Vella (M.D.), Jae Ho Sohn (M.D., M.S.)</div>
+                    <div class="project-venue">medRxiv, 2023</div>
+                    <div class="project-links">
+                        <a href="https://www.medrxiv.org/content/10.1101/2023.02.16.23286056v1">paper</a>
+
+                    </div>
+                    <p class="project-description">This study evaluates the efficacy of using Vision Transformer (ViT)
+                        based image embeddings for content-based image retrieval (CBIR) tasks for chest X-ray and CT
+                        images. We found that our approach performs well on both visual and semantic recognition tasks,
+                        providing a promising method for retrieving similar medical images to assist in diagnosis.</p>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project">
+                <div class="project-image">
+                    <img src="popv.webp" alt="popV">
+                </div>
+
+                <div class="project-info">
+                    <h3><a href="https://www.nature.com/articles/s41588-024-01993-3">Consensus Prediction of Cell Type
+                            Labels in Single-Cell Data with popV</a></h3>
+                    <div class="project-authors">Can Ergen, Galen Xing, Chenling Xu, Martin Kim, Michael Jayasuriya,
+                        Erin McGeever, Angela Oliveira Pisco, Aaron Streets, Nir Yosef</div>
+                    <div class="project-venue">Nature Genetics, 2024</div>
+                    <div class="project-links">
+                        <a href="https://www.nature.com/articles/s41588-024-01993-3">paper</a>
+                    </div>
+                    <p class="project-description">We proposed popular Vote (popV), an ensemble of prediction models
+                        with an ontology-based voting scheme for cell-type classification in single-cell sequencing
+                        analysis. Unlike existing methods, popV provides uncertainty scores, enabling confident
+                        annotation of most cells while highlighting populations that are challenging to annotate by
+                        label transfer. This approach helps reduce the load of manual inspection and focuses attention
+                        on the most problematic parts of the annotation process.</p>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project">
+                <div class="project-image">
+                    <img src="scvi-tools.webp" alt="scVI">
+                </div>
+
+                <div class="project-info">
+                    <h3><a href="https://www.nature.com/articles/s41587-021-01206-w">A Python Library for Probabilistic
+                            Analysis of Single-Cell Omics Data</a></h3>
+                    <div class="project-authors">Adam Gayoso, Romain Lopez, Galen Xing, Pierre Boyeau, Valeh Valiollah
+                        Pour Amiri, Justin Hong, Katherine Wu, Michael Jayasuriya, Edouard Mehlman, Maxime Langevin, et
+                        al.</div>
+                    <div class="project-venue">Nature Biotechnology, 2022</div>
+                    <div class="project-links">
+                        <a href="https://www.nature.com/articles/s41587-021-01206-w">paper</a>
+                    </div>
+                    <p class="project-description">We developed a Python library for probabilistic analysis of
+                        single-cell omics data. Our library implements methods for core computational tasks in
+                        single-cell analysis, including dimensionality reduction, cell clustering, cell-state
+                        annotation, removal of unwanted variation, analysis of differential expression, and joint
+                        analysis of multi-modal omics data. The library provides principled ways to capture uncertainty
+                        in biological systems and is convenient for decomposing the many sources of variation in omics
+                        data.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <script>
+        // Simple script to highlight current page in navigation
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentPath = window.location.pathname;
+            const links = document.querySelectorAll('.links a');
+
+            links.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.style.fontWeight = 'bold';
+                }
+            });
+        });
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
