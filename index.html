@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Jayasuriya (Nishantha Michael Jayasuriya) | AI in Medicine, Spine Imaging Research</title>
     <meta name="description"
-        content="Michael Jayasuriya (Nishantha Michael Jayasuriya, Nishantha M. Jayasuriya) is a research fellow in Dr. Mohamad Bydon's lab at the University of Chicago, a medical student at Drexel University College of Medicine, and a former Waymo software engineer researching artificial intelligence for spine imaging, osteoporosis screening, and clinical language models. Papers, presentations, and posters.">
+        content="Michael Jayasuriya (Nishantha Michael Jayasuriya, Nishantha M. Jayasuriya) is a research fellow in Dr. Mohamad Bydon's lab in the Section of Computational Neurosurgery at the University of Chicago, a medical student at Drexel University College of Medicine, and a former Waymo software engineer researching artificial intelligence for spine imaging, osteoporosis screening, and clinical language models. Papers, presentations, and posters.">
     <meta name="author" content="Nishantha Michael Jayasuriya">
     <meta name="keywords"
-        content="Michael Jayasuriya, Nishantha Michael Jayasuriya, Nishantha M. Jayasuriya, Nishantha Jayasuriya, NM Jayasuriya, University of Chicago, Bydon lab, neurosurgery, research fellow, Drexel, medical student, AI in medicine, spine imaging, vertebral bone quality, VBQ, osteoporosis, deep learning, Waymo, UC Berkeley">
+        content="Michael Jayasuriya, Nishantha Michael Jayasuriya, Nishantha M. Jayasuriya, Nishantha Jayasuriya, NM Jayasuriya, University of Chicago, Bydon lab, Section of Computational Neurosurgery, computational neurosurgery, neurosurgery, research fellow, Drexel, medical student, AI in medicine, spine imaging, vertebral bone quality, VBQ, osteoporosis, deep learning, Waymo, UC Berkeley">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://mjayasur.github.io/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0366d6">
 
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://mjayasur.github.io/">
@@ -43,7 +48,7 @@
             "email": "mailto:michael.jayasuriya@gmail.com",
             "jobTitle": "Research Fellow",
             "affiliation": [
-                {"@type": "CollegeOrUniversity", "name": "University of Chicago", "department": {"@type": "Organization", "name": "Department of Neurological Surgery"}},
+                {"@type": "CollegeOrUniversity", "name": "University of Chicago", "department": {"@type": "Organization", "name": "Section of Computational Neurosurgery, Department of Neurological Surgery"}},
                 {"@type": "CollegeOrUniversity", "name": "Drexel University College of Medicine"}
             ],
             "alumniOf": [
@@ -310,6 +315,49 @@
             margin: 26px 0 0;
         }
 
+        .entry.has-thumb {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .entry-thumb {
+            width: 210px;
+            aspect-ratio: 3 / 2;
+            flex-shrink: 0;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            background: #f6f8fb;
+            overflow: hidden;
+        }
+
+        .entry-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .entry-body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .press-item {
+            background: #f9f9f9;
+            border-radius: 5px;
+            padding: 18px 20px;
+            margin-bottom: 16px;
+        }
+
+        .press-item blockquote {
+            margin: 10px 0 0;
+            padding-left: 12px;
+            border-left: 3px solid #0366d6;
+            color: #444;
+            font-style: italic;
+        }
+
         footer {
             margin-top: 50px;
             font-size: 0.85rem;
@@ -339,6 +387,16 @@
                 margin-bottom: 15px;
                 max-width: 360px;
             }
+
+            .entry.has-thumb {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .entry-thumb {
+                width: 100%;
+                max-width: 360px;
+            }
         }
     </style>
 </head>
@@ -349,7 +407,7 @@
             <h1>Michael Jayasuriya</h1>
             <p>I'm Nishantha Michael Jayasuriya (I go by Michael), a research fellow in <a
                     href="https://www.uchicagomedicine.org/find-a-physician/physician/mohamad-bydon">Dr. Mohamad
-                    Bydon's</a> lab at the University of Chicago. Having just completed my third year at Drexel
+                    Bydon's</a> lab in the Section of Computational Neurosurgery at the University of Chicago. Having just completed my third year at Drexel
                 University College of Medicine, I plan to apply for the Neurologic Surgery match in 2028. My work
                 sits at the intersection of AI and medicine.</p>
 
@@ -358,7 +416,7 @@
 
             <div class="links">
                 <a href="mailto:michael.jayasuriya@gmail.com">Email</a> /
-                <a href="https://drive.google.com/file/d/1A-VoPHJOARQw-QDVrkaaOo87Sukk62iw/view?usp=sharing">CV</a> /
+                <a href="Jayasuriya_CV.pdf">CV</a> /
                 <a href="https://www.linkedin.com/in/mjayasur/">LinkedIn</a> /
                 <a href="https://scholar.google.com/citations?user=PVpGqNsAAAAJ&hl=en">Google Scholar</a> /
                 <a href="https://github.com/mjayasur">Github</a> /
@@ -388,6 +446,7 @@
                     data-count="paper"></span></button>
             <button type="button" data-filter="presentation" aria-pressed="false">Presentations &amp; posters<span
                     class="count" data-count="presentation"></span></button>
+            <button type="button" data-filter="press" aria-pressed="false">In the press</button>
         </div>
 
         <!-- ============ PAPERS ============ -->
@@ -590,21 +649,29 @@
 
             <h4 class="year-heading">2026</h4>
             <ul class="entry-list">
-                <li class="entry" data-type="presentation">
+                <li class="entry has-thumb" data-type="presentation">
+                    <div class="entry-thumb"><img src="img/pres/p01.jpg" alt="Glioblastoma survival risk calculator poster with annotated MRI examples" loading="lazy"></div>
+                    <div class="entry-body">
                     <div><span class="badge poster">Poster</span><span class="badge upcoming">Upcoming</span></div>
                     <div class="entry-title">An Interpretable Risk Calculator for Glioblastoma Survival Combining
                         Human-Readable MRI Features, MGMT Methylation, and Clinical Variables</div>
                     <div class="entry-meta">CNS Annual Meeting 2026, Washington, DC. Interactive poster session,
                         November 2, 2026</div>
+                    </div>
                 </li>
-                <li class="entry" data-type="presentation">
+                <li class="entry has-thumb" data-type="presentation">
+                    <div class="entry-thumb"><img src="img/pres/p02.jpg" alt="Readmission rates by decile of predicted benefit from uplift modeling" loading="lazy"></div>
+                    <div class="entry-body">
                     <div><span class="badge">Oral</span></div>
                     <div class="entry-title">Estimating the Safety of Early Discharge Using Uplift Modeling: A Causal
                         Machine Learning Analysis of the NSQIP Database</div>
                     <div class="entry-authors">Feng E, <span class="me">Jayasuriya NM</span>, et al.</div>
                     <div class="entry-meta">AANS Annual Scientific Meeting 2026, San Antonio, TX</div>
+                    </div>
                 </li>
-                <li class="entry" data-type="presentation">
+                <li class="entry has-thumb" data-type="presentation">
+                    <div class="entry-thumb"><img src="img/pres/p03.jpg" alt="Pipeline feeding operative note images and text into a multimodal language model" loading="lazy"></div>
+                    <div class="entry-body">
                     <div><span class="badge">Oral</span></div>
                     <div class="entry-title"><a
                             href="https://spinesummit26.eventscribe.net/fsPopup.asp?PresentationID=1748627&mode=presInfo">Are
@@ -613,20 +680,26 @@
                             Study</a></div>
                     <div class="entry-authors"><span class="me">Jayasuriya NM</span>, Feng E, et al.</div>
                     <div class="entry-meta">Spine Summit 2026 (AANS/CNS Spine Section), Phoenix, AZ</div>
+                    </div>
                 </li>
-                <li class="entry" data-type="presentation">
+                <li class="entry has-thumb" data-type="presentation">
+                    <div class="entry-thumb"><img src="img/pres/p04.jpg" alt="Operative note converted by a fine-tuned language model into structured registry fields" loading="lazy"></div>
+                    <div class="entry-body">
                     <div><span class="badge">Oral</span></div>
                     <div class="entry-title">Can Large Language Models Accurately Extract Data from Operative Notes on
                         Grade II Spondylolisthesis? A QOD Spine CORe Study</div>
                     <div class="entry-authors">Matache I, et al. (co-author: <span class="me">Jayasuriya NM</span>)
                     </div>
                     <div class="entry-meta">Spine Summit 2026 (AANS/CNS Spine Section), Phoenix, AZ</div>
+                    </div>
                 </li>
             </ul>
 
             <h4 class="year-heading">2025</h4>
             <ul class="entry-list">
-                <li class="entry" data-type="presentation">
+                <li class="entry has-thumb" data-type="presentation">
+                    <div class="entry-thumb"><img src="img/pres/p05.jpg" alt="Lumbar X-ray with vertebral keypoints and compression fracture grade" loading="lazy"></div>
+                    <div class="entry-body">
                     <div><span class="badge">Rapid Fire oral</span></div>
                     <div class="entry-title"><a
                             href="https://aans2025.eventscribe.net/fsPopup.asp?PresentationID=1585083&mode=presInfo">AI-Driven
@@ -634,8 +707,11 @@
                             X-Rays</a></div>
                     <div class="entry-authors"><span class="me">Jayasuriya NM</span>, Feng E, et al.</div>
                     <div class="entry-meta">AANS Annual Scientific Meeting 2025, Boston, MA</div>
+                    </div>
                 </li>
-                <li class="entry" data-type="presentation">
+                <li class="entry has-thumb" data-type="presentation">
+                    <div class="entry-thumb"><img src="img/pres/p06.jpg" alt="Radiology report converted by a fine-tuned language model into TLICS components" loading="lazy"></div>
+                    <div class="entry-body">
                     <div><span class="badge">Podium</span></div>
                     <div class="entry-title"><a
                             href="https://isass25.eventscribe.net/fsPopup.asp?PresentationID=1592819&mode=presInfo">Fine
@@ -643,8 +719,11 @@
                     <div class="entry-authors">Willis KM, Feng E, <span class="me">Jayasuriya NM</span>, Nathani K, Ryan
                         J, Bydon M</div>
                     <div class="entry-meta">ISASS Annual Conference 2025, Miami Beach, FL. Rapid Fire free papers</div>
+                    </div>
                 </li>
-                <li class="entry" data-type="presentation">
+                <li class="entry has-thumb" data-type="presentation">
+                    <div class="entry-thumb"><img src="img/pres/p07.jpg" alt="Lumbar X-ray with endplate keypoints and Meyerding spondylolisthesis grades" loading="lazy"></div>
+                    <div class="entry-body">
                     <div><span class="badge">Oral</span></div>
                     <div class="entry-title"><a
                             href="https://spinesummit25.eventscribe.net/fsPopup.asp?PresentationID=1579986&mode=presInfo">Automated
@@ -652,41 +731,56 @@
                             Intelligence</a></div>
                     <div class="entry-authors"><span class="me">Jayasuriya NM</span>, Feng E, et al.</div>
                     <div class="entry-meta">Spine Summit 2025 (AANS/CNS Spine Section), Tampa, FL</div>
+                    </div>
                 </li>
-                <li class="entry" data-type="presentation">
+                <li class="entry has-thumb" data-type="presentation">
+                    <div class="entry-thumb"><img src="img/pres/p08.jpg" alt="ROC curves comparing deep learning T-score prediction with the VBQ score" loading="lazy"></div>
+                    <div class="entry-body">
                     <div><span class="badge">Oral</span></div>
                     <div class="entry-title">Deep Learning Prediction of DEXA T-Score on MRI Outperforms Vertebral Bone
                         Quality Score in Osteoporosis Detection</div>
                     <div class="entry-authors">Feng E, <span class="me">Jayasuriya NM</span>, et al.</div>
                     <div class="entry-meta">Spine Summit 2025 (AANS/CNS Spine Section), Tampa, FL</div>
+                    </div>
                 </li>
-                <li class="entry" data-type="presentation">
+                <li class="entry has-thumb" data-type="presentation">
+                    <div class="entry-thumb"><img src="img/pres/p09.jpg" alt="Hand photograph augmentations used to train a laterality model" loading="lazy"></div>
+                    <div class="entry-body">
                     <div><span class="badge abstract">Abstract</span></div>
                     <div class="entry-title">An Artificial Intelligence Tool to Prevent Wrong-Side Hand Surgery: A
                         Feasibility Study</div>
                     <div class="entry-authors"><span class="me">Jayasuriya N</span>, Feng E, Goswani K, Ramtin S, Ilyas
                         AM</div>
                     <div class="entry-meta">AAOS Annual Meeting 2025</div>
+                    </div>
                 </li>
-                <li class="entry" data-type="presentation">
+                <li class="entry has-thumb" data-type="presentation">
+                    <div class="entry-thumb"><img src="img/pres/p10.jpg" alt="Pediatric wrist X-ray with detected fracture bounding boxes" loading="lazy"></div>
+                    <div class="entry-body">
                     <div><span class="badge abstract">Abstract</span></div>
                     <div class="entry-title">Deep Learning for Pediatric Wrist Fracture Detection</div>
                     <div class="entry-authors"><span class="me">Jayasuriya N</span>, Feng E, Goswani K, Ramtin S, Ilyas
                         AM</div>
                     <div class="entry-meta">AAHS Annual Meeting 2025</div>
+                    </div>
                 </li>
-                <li class="entry" data-type="presentation">
+                <li class="entry has-thumb" data-type="presentation">
+                    <div class="entry-thumb"><img src="img/pres/p11.jpg" alt="ROC curve for cervical fracture detection" loading="lazy"></div>
+                    <div class="entry-body">
                     <div><span class="badge abstract">Abstract</span></div>
                     <div class="entry-title">Deep Learning for Detection of Cervical Fractures</div>
                     <div class="entry-authors"><span class="me">Jayasuriya N</span>, Feng E, Goswani K, Ramtin S, Ilyas
                         AM</div>
                     <div class="entry-meta">EOA Annual Meeting 2025</div>
+                    </div>
                 </li>
             </ul>
 
             <h4 class="year-heading">2024</h4>
             <ul class="entry-list">
-                <li class="entry" data-type="presentation">
+                <li class="entry has-thumb" data-type="presentation">
+                    <div class="entry-thumb"><img src="img/pres/p12.jpg" alt="Schematic of a lumbar spine with automated landmarks and lordosis measurement" loading="lazy"></div>
+                    <div class="entry-body">
                     <div><span class="badge">Oral</span></div>
                     <div class="entry-title"><a
                             href="https://spinesummit24.eventscribe.net/fsPopup.asp?PresentationID=1375310&mode=presInfo">Automated
@@ -694,9 +788,29 @@
                             of CT Scan</a></div>
                     <div class="entry-authors">Nathani KR, <span class="me">Jayasuriya NM</span>, Feng E, et al.</div>
                     <div class="entry-meta">Spine Summit 2024 (AANS/CNS Spine Section), Las Vegas, NV</div>
+                    </div>
                 </li>
             </ul>
         </section>
+
+        <!-- ============ IN THE PRESS ============ -->
+        <section id="press" data-section="press">
+            <h3 class="subsection-title">In the press</h3>
+            <div class="press-item">
+                <div class="entry-title"><a
+                        href="https://drexel.edu/medicine/alumni/publications/alumni-magazine-archive/spring-2026/ai-in-medical-education/">State
+                        of the Science: AI in Medical Education</a></div>
+                <div class="entry-meta">Drexel University College of Medicine Alumni Magazine, Spring 2026</div>
+                <p class="project-description">Profiles PIAT Learn (Patient Interaction Analysis Tool), a voice-based AI
+                    standardized patient that Emily Feng and I built with Dr. Emily Spengler so that students can
+                    practice history-taking whenever they want and get immediate feedback on reading level, jargon,
+                    checks for understanding, and conversational turn-taking.</p>
+                <blockquote>"Could we make an AI chatbot for us that would serve as a standardized patient? Then, you
+                    could just log in whenever you want, chat with the chatbot with your voice and it would speak back
+                    to you."</blockquote>
+            </div>
+        </section>
+
     </main>
 
     <footer>Last updated September 2026.</footer>
@@ -730,7 +844,7 @@
             });
 
             var initial = location.hash.replace('#', '');
-            if (initial === 'paper' || initial === 'presentation') apply(initial);
+            if (initial === 'paper' || initial === 'presentation' || initial === 'press') apply(initial);
         })();
     </script>
 </body>
