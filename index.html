@@ -11,6 +11,7 @@
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
+            background: #fff;
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
@@ -77,32 +78,74 @@
             padding-bottom: 10px;
         }
 
+        .subsection-title {
+            font-size: 1.35rem;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            color: #000;
+        }
+
         .research-intro {
+            margin-bottom: 20px;
+        }
+
+        /* Filter */
+        .filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
             margin-bottom: 30px;
         }
 
-        .highlighted {
-            background-color: #fff2a8;
-            padding: 0 3px;
+        .filter button {
+            font: inherit;
+            font-size: 0.95rem;
+            padding: 6px 14px;
+            border: 1px solid #d0d7de;
+            border-radius: 999px;
+            background: #fff;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .filter button:hover {
+            border-color: #0366d6;
+        }
+
+        .filter button[aria-pressed="true"] {
+            background: #0366d6;
+            border-color: #0366d6;
+            color: #fff;
+        }
+
+        .filter .count {
+            opacity: 0.75;
+            margin-left: 4px;
+        }
+
+        .hidden {
+            display: none !important;
         }
 
         /* Projects */
         .project {
             display: flex;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             background-color: #f9f9f9;
             padding: 20px;
             border-radius: 5px;
         }
 
         .project-image {
-            width: 500px;
+            width: 360px;
             margin-right: 20px;
             flex-shrink: 0;
         }
 
         .project-image img {
             width: 100%;
+            max-height: 380px;
+            object-fit: cover;
             border: 1px solid #ddd;
         }
 
@@ -120,7 +163,20 @@
         .project-venue {
             color: #666;
             font-size: 0.9rem;
-            margin-bottom: 10px;
+            margin-bottom: 4px;
+        }
+
+        .also-presented {
+            font-size: 0.9rem;
+            color: #444;
+            margin: 8px 0;
+            padding-left: 10px;
+            border-left: 3px solid #0366d6;
+        }
+
+        .also-presented ul {
+            margin: 2px 0 0;
+            padding-left: 18px;
         }
 
         .project-links {
@@ -136,9 +192,72 @@
             margin-top: 10px;
         }
 
-        /* Publications */
-        .publications {
+        .me {
+            font-weight: 600;
+        }
+
+        /* Compact list entries */
+        .entry-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .entry {
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .entry-title {
+            font-weight: 600;
+            color: #000;
+        }
+
+        .entry-meta {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .entry-authors {
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.78rem;
+            padding: 1px 8px;
+            border-radius: 999px;
+            background: #eef4fb;
+            color: #0550ae;
+            margin-right: 6px;
+            white-space: nowrap;
+        }
+
+        .badge.poster {
+            background: #f3eefb;
+            color: #6639ba;
+        }
+
+        .badge.abstract {
+            background: #f1f1f1;
+            color: #555;
+        }
+
+        .badge.upcoming {
+            background: #fff4e0;
+            color: #8a5300;
+        }
+
+        .year-heading {
+            font-size: 1.05rem;
+            color: #000;
+            margin: 26px 0 0;
+        }
+
+        footer {
             margin-top: 50px;
+            font-size: 0.85rem;
+            color: #777;
         }
 
         /* Responsive */
@@ -162,7 +281,7 @@
                 width: 100%;
                 margin-right: 0;
                 margin-bottom: 15px;
-                max-width: 300px;
+                max-width: 360px;
             }
         }
     </style>
@@ -172,9 +291,8 @@
     <header>
         <div class="bio">
             <h1>Michael Jayasuriya</h1>
-            <p>I'm a third year medical student at Drexel College of Medicine in Philadelphia, Pennsylvania, interested
-                in the
-                intersection between AI and medicine.</p>
+            <p>I'm a fourth year medical student at Drexel College of Medicine in Philadelphia, Pennsylvania, interested
+                in the intersection between AI and medicine.</p>
 
             <p>Before medical school, I was a software engineer at Google's self-driving car project, <a
                     href="https://waymo.com/">Waymo</a>.</p>
@@ -194,141 +312,345 @@
     </header>
 
     <main>
-        <h2 class="section-title">Highlighted Research</h2>
+        <h2 class="section-title">Research</h2>
 
         <div class="research-intro">
             <p>My research focuses on the application of artificial intelligence and machine learning in medicine,
-                particularly in medical imaging and computational biology. I'm interested in developing tools that can
-                assist clinicians in diagnosis, treatment planning, and understanding complex biological systems. Some
-                of my papers are <span class="highlighted">highlighted</span>.</p>
+                particularly in spine imaging, clinical language models, and computational biology. I'm interested in
+                developing tools that can assist clinicians in diagnosis, treatment planning, and understanding complex
+                biological systems. Work that became a paper is listed under papers, with any meetings where it was
+                also presented; work shown only as a talk or poster is listed under presentations and posters.</p>
         </div>
 
-        <div class="projects">
-            <!-- Project 1 -->
-            <div class="project">
-                <div class="project-image">
-                    <img src="hounsfield.png" alt="AI Osteoporosis Screening">
-                </div>
-
-                <div class="project-info">
-                    <h3><a href="#">Artificial Intelligence Image Analysis for Hounsfield Units in Preoperative
-                            Thoracolumbar CT Scans</a></h3>
-                    <div class="project-authors">Emily Feng, BS, Nishantha M. Jayasuriya, BA, Karim Rizwan Nathani,
-                        MBBS, MS, Konstantinos Katsos, MBBS, Laura A. Machlab, MS, Graham W. Johnson, MD, PhD, Brett A.
-                        Freedman, MD, and Mohamad Bydon, MD</div>
-                    <div class="project-venue">Journal of Neurosurgery: Spine, In Press</div>
-                    <div class="project-venue">Oral Presentation at AANS 2024</div>
-                    <div class="project-links">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p class="project-description">We developed an AI model for automatically detecting Hounsfield unit
-                        values at the L1 vertebra in preoperative thoracolumbar CT scans. This model serves as a
-                        screening tool for osteoporosis in patients undergoing spine surgery. Using the nnU-Net
-                        framework for segmentation, our model achieved a high Dice coefficient of 0.91 and strong
-                        agreement with human experts (Pearson correlation: 0.96).</p>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project">
-                <div class="project-image">
-                    <img src="semantic-retrieval.gif" alt="Semantic Retrieval">
-                </div>
-
-                <div class="project-info">
-                    <h3><a href="https://www.medrxiv.org/content/10.1101/2023.02.16.23286056v1">Semantic Retrieval of
-                            Similar Radiological Images using Vision Transformers</a></h3>
-                    <div class="project-authors">Anjali Thakrar*, Michael Jayasuriya*, Adrian Serapio, Xiao Wu (M.D.),
-                        Eric Davis (M.D.), Jamie Schroeder (M.D.), Maya Vella (M.D.), Jae Ho Sohn (M.D., M.S.)</div>
-                    <div class="project-venue">medRxiv, 2023</div>
-                    <div class="project-links">
-                        <a href="https://www.medrxiv.org/content/10.1101/2023.02.16.23286056v1">paper</a>
-
-                    </div>
-                    <p class="project-description">This study evaluates the efficacy of using Vision Transformer (ViT)
-                        based image embeddings for content-based image retrieval (CBIR) tasks for chest X-ray and CT
-                        images. We found that our approach performs well on both visual and semantic recognition tasks,
-                        providing a promising method for retrieving similar medical images to assist in diagnosis.</p>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project">
-                <div class="project-image">
-                    <img src="popv.webp" alt="popV">
-                </div>
-
-                <div class="project-info">
-                    <h3><a href="https://www.nature.com/articles/s41588-024-01993-3">Consensus Prediction of Cell Type
-                            Labels in Single-Cell Data with popV</a></h3>
-                    <div class="project-authors">Can Ergen, Galen Xing, Chenling Xu, Martin Kim, Michael Jayasuriya,
-                        Erin McGeever, Angela Oliveira Pisco, Aaron Streets, Nir Yosef</div>
-                    <div class="project-venue">Nature Genetics, 2024</div>
-                    <div class="project-links">
-                        <a href="https://www.nature.com/articles/s41588-024-01993-3">paper</a>
-                    </div>
-                    <p class="project-description">We proposed popular Vote (popV), an ensemble of prediction models
-                        with an ontology-based voting scheme for cell-type classification in single-cell sequencing
-                        analysis. Unlike existing methods, popV provides uncertainty scores, enabling confident
-                        annotation of most cells while highlighting populations that are challenging to annotate by
-                        label transfer. This approach helps reduce the load of manual inspection and focuses attention
-                        on the most problematic parts of the annotation process.</p>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project">
-                <div class="project-image">
-                    <img src="scvi-tools.webp" alt="scVI">
-                </div>
-
-                <div class="project-info">
-                    <h3><a href="https://www.nature.com/articles/s41587-021-01206-w">A Python Library for Probabilistic
-                            Analysis of Single-Cell Omics Data</a></h3>
-                    <div class="project-authors">Adam Gayoso, Romain Lopez, Galen Xing, Pierre Boyeau, Valeh Valiollah
-                        Pour Amiri, Justin Hong, Katherine Wu, Michael Jayasuriya, Edouard Mehlman, Maxime Langevin, et
-                        al.</div>
-                    <div class="project-venue">Nature Biotechnology, 2022</div>
-                    <div class="project-links">
-                        <a href="https://www.nature.com/articles/s41587-021-01206-w">paper</a>
-                    </div>
-                    <p class="project-description">We developed a Python library for probabilistic analysis of
-                        single-cell omics data. Our library implements methods for core computational tasks in
-                        single-cell analysis, including dimensionality reduction, cell clustering, cell-state
-                        annotation, removal of unwanted variation, analysis of differential expression, and joint
-                        analysis of multi-modal omics data. The library provides principled ways to capture uncertainty
-                        in biological systems and is convenient for decomposing the many sources of variation in omics
-                        data.</p>
-                </div>
-            </div>
+        <div class="filter" role="group" aria-label="Filter research">
+            <button type="button" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-filter="paper" aria-pressed="false">Papers<span class="count"
+                    data-count="paper"></span></button>
+            <button type="button" data-filter="presentation" aria-pressed="false">Presentations &amp; posters<span
+                    class="count" data-count="presentation"></span></button>
         </div>
 
+        <!-- ============ PAPERS ============ -->
+        <section id="papers" data-section="paper">
+            <h3 class="subsection-title">Papers</h3>
 
+            <div class="projects">
+                <!-- VBQ -->
+                <div class="project" data-type="paper">
+                    <div class="project-image">
+                        <img src="vbq.jpg"
+                            alt="Sagittal T1 lumbar MRI with regions of interest in L1 to L4 and the CSF used to compute the VBQ score">
+                    </div>
+
+                    <div class="project-info">
+                        <h3><a href="https://doi.org/10.1016/j.clineuro.2025.109094">Automated Vertebral Bone Quality
+                                Score Measurement on Lumbar MRI Using Deep Learning: Development and Validation of an AI
+                                Algorithm</a></h3>
+                        <div class="project-authors"><span class="me">Nishantha M. Jayasuriya</span>, Emily Feng, Karim
+                            Rizwan Nathani, Maliya Delawan, Konstantinos Katsos, Ojas Bhagra, Brett A. Freedman, Mohamad
+                            Bydon</div>
+                        <div class="project-venue">Clinical Neurology and Neurosurgery, 2025</div>
+                        <div class="also-presented">Also presented:
+                            <ul>
+                                <li>Rapid Fire oral presentation, CNS Annual Meeting 2024, Houston, TX (abstract
+                                    published in <a href="https://doi.org/10.1227/neu.0000000000003360_405">Neurosurgery
+                                        2025;71(Suppl 1)</a>)</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://doi.org/10.1016/j.clineuro.2025.109094">paper</a>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/40780043/">PubMed</a>
+                        </div>
+                        <p class="project-description">Poor bone quality predicts screw loosening, cage subsidence, and
+                            proximal junctional failure after spine surgery, but many patients reach the operating room
+                            without a DEXA scan. The vertebral bone quality (VBQ) score measures bone health from the
+                            routine T1-weighted lumbar MRI every surgical patient already has, by dividing the L1-L4
+                            vertebral body signal by the CSF signal. Placing those regions of interest by hand is slow
+                            and varies between raters, so we automated it: a YOLOv8 detector trained on the SPIDER
+                            dataset (257 patients) finds the vertebral bodies, and a Gaussian mixture model locates CSF
+                            behind L3. On 47 surgical patients, vertebral body detection reached a precision of 0.94 and
+                            mAP@0.5 of 0.94, and AI-derived VBQ agreed with two human raters with ICCs of 0.88 and 0.93
+                            (human vs. human 0.95) and Pearson correlations of 0.86 and 0.90.</p>
+                    </div>
+                </div>
+
+                <!-- Hounsfield -->
+                <div class="project" data-type="paper">
+                    <div class="project-image">
+                        <img src="hounsfield.png" alt="AI Osteoporosis Screening">
+                    </div>
+
+                    <div class="project-info">
+                        <h3><a href="https://doi.org/10.3171/2025.1.SPINE24900">Artificial Intelligence Image Analysis
+                                for Hounsfield Units in Preoperative Thoracolumbar CT Scans: An Automated Screening for
+                                Osteoporosis in Patients Undergoing Spine Surgery</a></h3>
+                        <div class="project-authors">Emily Feng, <span class="me">Nishantha M. Jayasuriya</span>, Karim
+                            Rizwan Nathani, Konstantinos Katsos, Laura A. Machlab, Graham W. Johnson, Brett A. Freedman,
+                            Mohamad Bydon</div>
+                        <div class="project-venue">Journal of Neurosurgery: Spine, 2025</div>
+                        <div class="also-presented">Also presented:
+                            <ul>
+                                <li>Oral presentation, Spine Summit 2024 (AANS/CNS Spine Section), Las Vegas, NV</li>
+                                <li>Rapid Fire oral presentation, AANS Annual Scientific Meeting 2024, Chicago, IL</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://doi.org/10.3171/2025.1.SPINE24900">paper</a>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/40250051/">PubMed</a>
+                        </div>
+                        <p class="project-description">We developed an AI model for automatically detecting Hounsfield
+                            unit values at the L1 vertebra in preoperative thoracolumbar CT scans. This model serves as a
+                            screening tool for osteoporosis in patients undergoing spine surgery. Using the nnU-Net
+                            framework for segmentation, our model achieved a high Dice coefficient of 0.91 and strong
+                            agreement with human experts (Pearson correlation: 0.96).</p>
+                    </div>
+                </div>
+
+                <!-- Semantic retrieval -->
+                <div class="project" data-type="paper">
+                    <div class="project-image">
+                        <img src="semantic-retrieval.gif" alt="Semantic Retrieval">
+                    </div>
+
+                    <div class="project-info">
+                        <h3><a href="https://www.medrxiv.org/content/10.1101/2023.02.16.23286056v1">Semantic Retrieval
+                                of Similar Radiological Images using Vision Transformers</a></h3>
+                        <div class="project-authors">Anjali Thakrar*, <span class="me">Michael Jayasuriya*</span>, Adrian
+                            Serapio, Xiao Wu (M.D.), Eric Davis (M.D.), Jamie Schroeder (M.D.), Maya Vella (M.D.), Jae Ho
+                            Sohn (M.D., M.S.)</div>
+                        <div class="project-venue">medRxiv, 2023</div>
+                        <div class="project-links">
+                            <a href="https://www.medrxiv.org/content/10.1101/2023.02.16.23286056v1">paper</a>
+                        </div>
+                        <p class="project-description">This study evaluates the efficacy of using Vision Transformer
+                            (ViT) based image embeddings for content-based image retrieval (CBIR) tasks for chest X-ray
+                            and CT images. We found that our approach performs well on both visual and semantic
+                            recognition tasks, providing a promising method for retrieving similar medical images to
+                            assist in diagnosis.</p>
+                    </div>
+                </div>
+
+                <!-- popV -->
+                <div class="project" data-type="paper">
+                    <div class="project-image">
+                        <img src="popv.webp" alt="popV">
+                    </div>
+
+                    <div class="project-info">
+                        <h3><a href="https://www.nature.com/articles/s41588-024-01993-3">Consensus Prediction of Cell
+                                Type Labels in Single-Cell Data with popV</a></h3>
+                        <div class="project-authors">Can Ergen, Galen Xing, Chenling Xu, Martin Kim, <span
+                                class="me">Michael Jayasuriya</span>, Erin McGeever, Angela Oliveira Pisco, Aaron
+                            Streets, Nir Yosef</div>
+                        <div class="project-venue">Nature Genetics, 2024</div>
+                        <div class="project-links">
+                            <a href="https://www.nature.com/articles/s41588-024-01993-3">paper</a>
+                        </div>
+                        <p class="project-description">We proposed popular Vote (popV), an ensemble of prediction models
+                            with an ontology-based voting scheme for cell-type classification in single-cell sequencing
+                            analysis. Unlike existing methods, popV provides uncertainty scores, enabling confident
+                            annotation of most cells while highlighting populations that are challenging to annotate by
+                            label transfer. This approach helps reduce the load of manual inspection and focuses
+                            attention on the most problematic parts of the annotation process.</p>
+                    </div>
+                </div>
+
+                <!-- scvi-tools -->
+                <div class="project" data-type="paper">
+                    <div class="project-image">
+                        <img src="scvi-tools.webp" alt="scVI">
+                    </div>
+
+                    <div class="project-info">
+                        <h3><a href="https://www.nature.com/articles/s41587-021-01206-w">A Python Library for
+                                Probabilistic Analysis of Single-Cell Omics Data</a></h3>
+                        <div class="project-authors">Adam Gayoso, Romain Lopez, Galen Xing, Pierre Boyeau, Valeh
+                            Valiollah Pour Amiri, Justin Hong, Katherine Wu, <span class="me">Michael Jayasuriya</span>,
+                            Edouard Mehlman, Maxime Langevin, et al.</div>
+                        <div class="project-venue">Nature Biotechnology, 2022</div>
+                        <div class="project-links">
+                            <a href="https://www.nature.com/articles/s41587-021-01206-w">paper</a>
+                        </div>
+                        <p class="project-description">We developed a Python library for probabilistic analysis of
+                            single-cell omics data. Our library implements methods for core computational tasks in
+                            single-cell analysis, including dimensionality reduction, cell clustering, cell-state
+                            annotation, removal of unwanted variation, analysis of differential expression, and joint
+                            analysis of multi-modal omics data. The library provides principled ways to capture
+                            uncertainty in biological systems and is convenient for decomposing the many sources of
+                            variation in omics data.</p>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="entry-list">
+                <li class="entry" data-type="paper">
+                    <div class="entry-title"><a href="https://doi.org/10.25259/SNI_626_2025">Optimizing Neurosurgical
+                            Operating Room Schedule: Integrating Machine Learning Models for Operative Time Prediction
+                            and Schedule Design</a></div>
+                    <div class="entry-authors">Nathani KR, Machlab LA, von Kentzinsky HL, Feng E, <span
+                            class="me">Jayasuriya NM</span>, Nathani AM, Ibrahim S, Bhandarkar A, Timm PC, Ali R, Tawk
+                        RG, Freedman B, Bydon M</div>
+                    <div class="entry-meta">Surgical Neurology International, 2025</div>
+                </li>
+                <li class="entry" data-type="paper">
+                    <div class="entry-title"><a href="https://doi.org/10.58616/001c.137606">Artificial Intelligence in
+                            Orthopedic Surgery: A Practical Overview of Current Applications and Trends</a></div>
+                    <div class="entry-authors">Feng E, <span class="me">Jayasuriya N</span>, Kirby D</div>
+                    <div class="entry-meta">SurgiColl, 2025 (review)</div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ============ PRESENTATIONS & POSTERS ============ -->
+        <section id="presentations" data-section="presentation">
+            <h3 class="subsection-title">Presentations &amp; posters</h3>
+            <p class="entry-meta">Talks and posters that have not (yet) become a paper. Presentations of published work
+                are listed with the paper above.</p>
+
+            <h4 class="year-heading">2026</h4>
+            <ul class="entry-list">
+                <li class="entry" data-type="presentation">
+                    <div><span class="badge poster">Poster</span><span class="badge upcoming">Upcoming</span></div>
+                    <div class="entry-title">An Interpretable Risk Calculator for Glioblastoma Survival Combining
+                        Human-Readable MRI Features, MGMT Methylation, and Clinical Variables</div>
+                    <div class="entry-meta">CNS Annual Meeting 2026, Washington, DC. Interactive poster session,
+                        November 2, 2026</div>
+                </li>
+                <li class="entry" data-type="presentation">
+                    <div><span class="badge">Oral</span></div>
+                    <div class="entry-title">Estimating the Safety of Early Discharge Using Uplift Modeling: A Causal
+                        Machine Learning Analysis of the NSQIP Database</div>
+                    <div class="entry-authors">Feng E, <span class="me">Jayasuriya NM</span>, et al.</div>
+                    <div class="entry-meta">AANS Annual Scientific Meeting 2026, San Antonio, TX</div>
+                </li>
+                <li class="entry" data-type="presentation">
+                    <div><span class="badge">Oral</span></div>
+                    <div class="entry-title"><a
+                            href="https://spinesummit26.eventscribe.net/fsPopup.asp?PresentationID=1748627&mode=presInfo">Are
+                            Multimodal Large Language Models Superior to Text-Only Natural Language Processing Models
+                            for Automated Information Extraction from Spine Operative Notes? A QOD Spine CORe
+                            Study</a></div>
+                    <div class="entry-authors"><span class="me">Jayasuriya NM</span>, Feng E, et al.</div>
+                    <div class="entry-meta">Spine Summit 2026 (AANS/CNS Spine Section), Phoenix, AZ</div>
+                </li>
+                <li class="entry" data-type="presentation">
+                    <div><span class="badge">Oral</span></div>
+                    <div class="entry-title">Can Large Language Models Accurately Extract Data from Operative Notes on
+                        Grade II Spondylolisthesis? A QOD Spine CORe Study</div>
+                    <div class="entry-authors">Matache I, et al. (co-author: <span class="me">Jayasuriya NM</span>)
+                    </div>
+                    <div class="entry-meta">Spine Summit 2026 (AANS/CNS Spine Section), Phoenix, AZ</div>
+                </li>
+            </ul>
+
+            <h4 class="year-heading">2025</h4>
+            <ul class="entry-list">
+                <li class="entry" data-type="presentation">
+                    <div><span class="badge">Rapid Fire oral</span></div>
+                    <div class="entry-title"><a
+                            href="https://aans2025.eventscribe.net/fsPopup.asp?PresentationID=1585083&mode=presInfo">AI-Driven
+                            Approach for Automated Detection and Grading of Compression Fractures on Lumbar Spine
+                            X-Rays</a></div>
+                    <div class="entry-authors"><span class="me">Jayasuriya NM</span>, Feng E, et al.</div>
+                    <div class="entry-meta">AANS Annual Scientific Meeting 2025, Boston, MA</div>
+                </li>
+                <li class="entry" data-type="presentation">
+                    <div><span class="badge">Podium</span></div>
+                    <div class="entry-title"><a
+                            href="https://isass25.eventscribe.net/fsPopup.asp?PresentationID=1592819&mode=presInfo">Fine
+                            Tuning a Large Language Model to Extract Thoracolumbar Injury Classification Score</a></div>
+                    <div class="entry-authors">Willis KM, Feng E, <span class="me">Jayasuriya NM</span>, Nathani K, Ryan
+                        J, Bydon M</div>
+                    <div class="entry-meta">ISASS Annual Conference 2025, Miami Beach, FL. Rapid Fire free papers</div>
+                </li>
+                <li class="entry" data-type="presentation">
+                    <div><span class="badge">Oral</span></div>
+                    <div class="entry-title"><a
+                            href="https://spinesummit25.eventscribe.net/fsPopup.asp?PresentationID=1579986&mode=presInfo">Automated
+                            Assessment of Spondylolisthesis Severity on Lumbar Spine X-Rays Using Artificial
+                            Intelligence</a></div>
+                    <div class="entry-authors"><span class="me">Jayasuriya NM</span>, Feng E, et al.</div>
+                    <div class="entry-meta">Spine Summit 2025 (AANS/CNS Spine Section), Tampa, FL</div>
+                </li>
+                <li class="entry" data-type="presentation">
+                    <div><span class="badge">Oral</span></div>
+                    <div class="entry-title">Deep Learning Prediction of DEXA T-Score on MRI Outperforms Vertebral Bone
+                        Quality Score in Osteoporosis Detection</div>
+                    <div class="entry-authors">Feng E, <span class="me">Jayasuriya NM</span>, et al.</div>
+                    <div class="entry-meta">Spine Summit 2025 (AANS/CNS Spine Section), Tampa, FL</div>
+                </li>
+                <li class="entry" data-type="presentation">
+                    <div><span class="badge abstract">Abstract</span></div>
+                    <div class="entry-title">An Artificial Intelligence Tool to Prevent Wrong-Side Hand Surgery: A
+                        Feasibility Study</div>
+                    <div class="entry-authors"><span class="me">Jayasuriya N</span>, Feng E, Goswani K, Ramtin S, Ilyas
+                        AM</div>
+                    <div class="entry-meta">AAOS Annual Meeting 2025</div>
+                </li>
+                <li class="entry" data-type="presentation">
+                    <div><span class="badge abstract">Abstract</span></div>
+                    <div class="entry-title">Deep Learning for Pediatric Wrist Fracture Detection</div>
+                    <div class="entry-authors"><span class="me">Jayasuriya N</span>, Feng E, Goswani K, Ramtin S, Ilyas
+                        AM</div>
+                    <div class="entry-meta">AAHS Annual Meeting 2025</div>
+                </li>
+                <li class="entry" data-type="presentation">
+                    <div><span class="badge abstract">Abstract</span></div>
+                    <div class="entry-title">Deep Learning for Detection of Cervical Fractures</div>
+                    <div class="entry-authors"><span class="me">Jayasuriya N</span>, Feng E, Goswani K, Ramtin S, Ilyas
+                        AM</div>
+                    <div class="entry-meta">EOA Annual Meeting 2025</div>
+                </li>
+            </ul>
+
+            <h4 class="year-heading">2024</h4>
+            <ul class="entry-list">
+                <li class="entry" data-type="presentation">
+                    <div><span class="badge">Oral</span></div>
+                    <div class="entry-title"><a
+                            href="https://spinesummit24.eventscribe.net/fsPopup.asp?PresentationID=1375310&mode=presInfo">Automated
+                            Measurement of Spinal Radiographic Parameters: An Algorithmic Approach Using Image Analysis
+                            of CT Scan</a></div>
+                    <div class="entry-authors">Nathani KR, <span class="me">Jayasuriya NM</span>, Feng E, et al.</div>
+                    <div class="entry-meta">Spine Summit 2024 (AANS/CNS Spine Section), Las Vegas, NV</div>
+                </li>
+            </ul>
+        </section>
     </main>
 
+    <footer>Last updated September 2026.</footer>
+
     <script>
-        // Simple script to highlight current page in navigation
-        document.addEventListener('DOMContentLoaded', function () {
-            const currentPath = window.location.pathname;
-            const links = document.querySelectorAll('.links a');
+        (function () {
+            var buttons = document.querySelectorAll('.filter button');
+            var sections = document.querySelectorAll('[data-section]');
 
-            links.forEach(link => {
-                if (link.getAttribute('href') === currentPath) {
-                    link.style.fontWeight = 'bold';
-                }
+            // Fill in counts
+            ['paper', 'presentation'].forEach(function (type) {
+                var n = document.querySelectorAll('[data-type="' + type + '"]').length;
+                var el = document.querySelector('[data-count="' + type + '"]');
+                if (el) el.textContent = ' (' + n + ')';
             });
-        });
 
-        // Add smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+            function apply(filter) {
+                buttons.forEach(function (b) {
+                    b.setAttribute('aria-pressed', b.dataset.filter === filter ? 'true' : 'false');
                 });
+                sections.forEach(function (s) {
+                    s.classList.toggle('hidden', filter !== 'all' && s.dataset.section !== filter);
+                });
+                if (history.replaceState) {
+                    history.replaceState(null, '', filter === 'all' ? location.pathname : '#' + filter);
+                }
+            }
+
+            buttons.forEach(function (b) {
+                b.addEventListener('click', function () { apply(b.dataset.filter); });
             });
-        });
+
+            var initial = location.hash.replace('#', '');
+            if (initial === 'paper' || initial === 'presentation') apply(initial);
+        })();
     </script>
 </body>
 
